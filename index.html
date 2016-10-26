@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Base Project</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+	<header>
+		<div ng-include src="'views/navbar.html'"></div>
+	</header>
+
+	<main class="container">
+		<ng-view></ng-view>
+	</main>
+
+	<footer></footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
+
+	<script>
+	  // Initialize Firebase
+	  //
+	  // **** FILL WITH DATA OF YOUR OWN FIREBASE PROJECT ****
+	  var config = {
+	    apiKey: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+	    authDomain: "mysupercoolproject-sdfsdfsd45.firebaseapp.com",
+	    databaseURL: "https://mysupercoolproject-sdfsdfsd45.firebaseio.com",
+	    storageBucket: "mysupercoolproject-sdfsdfsd45.appspot.com",
+	    messagingSenderId: "000000000000000000"
+	  };
+	  firebase.initializeApp(config);
+
+	  // ---->>> Check also .firebaserc (for deployment)
+
+	</script>
+
+	<script src="js/main.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+
+</body>
+</html>

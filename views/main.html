@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="col-md-6">
+		<div class="jumbotron">
+			<p ng-hide="user">Log in to add a message to the channel...</p>
+			<form ng-show="user" class="form-group" ng-submit="addMessage($event)">
+
+					<p>Logged as: <img width="32" ng-src="{{ user.avatar }}" alt=""> <span>{{ user.email }}</span></p>
+
+
+				<label for="">Message: </label>
+				<input ng-model="message" type="text" class="form-control" id="" placeholder="Insert a message...">
+			</form>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h3>{{ messages.length }} messages</h3>
+
+		<ul class="list-unstyled">
+			<li ng-repeat="message in messages">
+				<p>
+					<img width="20" ng-src="{{ message.avatar }}" alt="">
+					<strong>{{ message.username }}</strong> :
+					<span>{{ message.text }}</span>
+				</p>
+			</li>
+		</ul>
+	</div>
+
+</div>
