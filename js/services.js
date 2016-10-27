@@ -24,14 +24,14 @@ angular.module("myServices",['firebase'])
 
     Auth.$onAuthStateChanged(function(authData) {
       if (authData) {
-        $rootScope.$broadcast("authEvent", {
+        $rootScope.user = {
           name: authData.displayName,
           avatar: authData.photoURL,
           email: authData.email
-        });
+        };
       }
       else {
-        $rootScope.$broadcast("authEvent", null)
+        $rootScope.user = null;
       }
     });
 
